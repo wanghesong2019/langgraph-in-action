@@ -10,6 +10,9 @@ export default withMermaid(
     title: 'LangGraph 实战入门',
     description: '每个知识点 = 可运行 demo + 技术博客 + 标注到章节的参考文献',
 
+    // 项目页站点挂在 /<repo>/ 下（非用户根域名），必须显式设 base，否则资源与链接全 404
+    base: '/langgraph-in-action/',
+
     // 排除本地内部文档与下载的官方原文（已被 gitignore，但本地构建时仍存在，防泄漏）
     srcExclude: ['写作规范.md', '**/Interrupts.md'],
 
