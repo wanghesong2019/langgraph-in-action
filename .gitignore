@@ -1,0 +1,19 @@
+# --- 作者内部文档（不开源） ---
+写作规范.md
+
+# --- 下载的官方文档原文（版权，仅本地阅读，不开源） ---
+**/Interrupts.md
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.egg-info/
+.pytest_cache/
+
+# --- Node / VitePress 构建产物 ---
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
