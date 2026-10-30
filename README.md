@@ -21,7 +21,7 @@
 |---|---|---|---|
 | 1 | LangGraph 入门：把 Agent 建模成有状态图 | 文档处理流水线 + 条件路由 + checkpointer | ✅ 完成（demo + 博客 + 8 篇参考文献） |
 | 2 | HITL：高危操作人工审批 | 客服工单 Agent：退款/删除需 approve | ✅ 完成（demo + 博客 + 7 篇参考文献） |
-| 3 | 多 Agent：Supervisor 分诊 + 专职 Worker | 工单分类 → 三个专职处理 → 聚合 | 待写 |
+| 3 | 多 Agent：Supervisor 分诊 + 专职 Worker | 工单分类 → 三个专职处理 → 聚合 | ✅ 完成（demo + 博客 + 6 篇参考文献） |
 | 4 | 两种循环：ReAct 工具循环 vs Executor+Critic | 查资料(工具循环) vs 写方案(生成-评审-重写) | 待写 |
 | 5 | Function Calling 做强制结构化输出 | 把"交卷"伪装成 tool，用 schema 逼合法 JSON | 待写 |
 | 6 | RAG 混合检索：dense+BM25→RRF + 中文分词坑 | 文档问答检索（Recall 0.3→1.0 的分词坑） | 待写 |
@@ -76,3 +76,4 @@ python refund_approval.py
 - [x] 系列规划 + 平台选择 + 项目结构（本 README）
 - [x] 第 1 讲（01-state-graph）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 8 篇）
 - [x] 第 2 讲（02-hitl）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）
+- [x] 第 3 讲（03-supervisor-multiagent）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 6 篇）

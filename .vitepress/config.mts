@@ -34,6 +34,7 @@ export default withMermaid(
             { text: '系列导航', link: '/' },
             { text: '第 1 讲 · LangGraph 入门', link: '/01-state-graph/' },
             { text: '第 2 讲 · HITL 人工审批', link: '/02-hitl/' },
+            { text: '第 3 讲 · 多 Agent Supervisor', link: '/03-supervisor-multiagent/' },
           ],
         },
       ],
