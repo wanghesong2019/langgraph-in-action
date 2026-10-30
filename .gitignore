@@ -17,3 +17,6 @@ venv/
 node_modules/
 .vitepress/dist/
 .vitepress/cache/
+
+# --- 专栏封面等对外发布素材（不进仓库） ---
+assets/

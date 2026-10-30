@@ -1,6 +1,6 @@
-# 让 Agent 学会"先问再做"：给高危操作加一道人工审批闸门（LangGraph HITL 最小实践）
+# 第 2 讲：HITL——让 Agent 学会"先问再做"，给高危操作加一道人工审批闸门
 
-> 本系列用可运行的最小 demo 讲 LangGraph 实战。这篇讲 HITL——怎么让 Agent 在"高危动作"前停下来等人工审批。配套 demo 见同目录 `demo.py`。
+> 本系列用可运行的最小 demo 讲 LangGraph 实战。这是第 2 讲：上一篇（第 1 讲）搭好了 State / Node / Edge / Checkpointer 四件套骨架，这篇往上加第一道「真东西」——让 Agent 在"高危动作"前停下来等人工审批。配套 demo 见同目录 `refund_approval.py`。
 
 **TL;DR**：HITL 的本质 = 在 Agent 执行流程里强留一个人类介入的口子。落地三步：① 给动作打风险标签（`risk_level`）② 高危动作用 `interrupt()` 暂停等人工审批 ③ 配 checkpointer + thread_id 才能 resume。
 
@@ -183,23 +183,14 @@ demo 只做了 approve / reject **两态**，真实生产往往还需要另外�
 
 ## 参考文献
 
-1. **LangGraph 官方文档《Interrupts》** — <https://docs.langchain.com/oss/javascript/langgraph/interrupts>（支撑 §3/§4/§6）
-   重点读：① "The node re-runs from the beginning" ② "Do not wrap interrupt in try/except" ③ "Avoid while True + interrupt loops" ④ "checkpointer required" ⑤ static vs dynamic interrupts。
+1. **LangGraph 官方文档《Interrupts》** — <https://docs.langchain.com/oss/javascript/langgraph/interrupts>
+2. **LangChain 官方博客《Making it easier to build human-in-the-loop agents with interrupt》** — <https://www.langchain.com/blog/making-it-easier-to-build-human-in-the-loop-agents-with-interrupt>
+3. **LangChain 官方文档《Human-in-the-loop（concepts）》** — <https://docs.langchain.com/oss/javascript/concepts/human-in-the-loop>
+4. **Duvo《When the Agent Should Ask, Not Act》** — <https://docs.duvo.ai/best-practices/when-to-ask-a-human>
+5. **Cloudflare Agents《Human-in-the-loop patterns》** — <https://developers.cloudflare.com/agents/concepts/agentic-patterns/human-in-the-loop/>
+6. **awesome-agentic-patterns《human-in-loop-approval-framework》** — <https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/human-in-loop-approval-framework.md>
+7. **IEEE Access 2024《Applications, Challenges, and Future Directions of Human-in-the-Loop Learning》** — <https://ieeexplore.ieee.org/abstract/document/10530996>
 
-2. **LangChain 官方博客《Making it easier to build human-in-the-loop agents with interrupt》** — <https://www.langchain.com/blog/making-it-easier-to-build-human-in-the-loop-agents-with-interrupt>（支撑 §3）
-   重点读：① persistence-first 那段（checkpoint 是"human/agent 协作的 scratchpad"）② `interrupt` 类比 `input()` 那段 ③ "Common HITL workflows" 第 1 类。
+---
 
-3. **LangChain 官方文档《Human-in-the-loop（concepts）》** — <https://docs.langchain.com/oss/javascript/concepts/human-in-the-loop>（支撑 §7）
-   重点读：① "Approval" 交互模式 ② 工具级 HITL 的四种决策 approve / edit / reject / respond。
-
-4. **Duvo《When the Agent Should Ask, Not Act》** — <https://docs.duvo.ai/best-practices/when-to-ask-a-human>（支撑 §1/§5）
-   重点读：① "gate by action risk, not agent judgment" ② "An ungated risky step will run" ③ 反模式 "over-gating → approval fatigue"。
-
-5. **Cloudflare Agents《Human-in-the-loop patterns》** — <https://developers.cloudflare.com/agents/concepts/agentic-patterns/human-in-the-loop/>（支撑 §7）
-   重点读：① durable workflow（`waitForApproval`）② timeout 默认拒绝 ③ escalation + 审计留痕。
-
-6. **awesome-agentic-patterns《human-in-loop-approval-framework》** — <https://github.com/nibzard/awesome-agentic-patterns/blob/main/patterns/human-in-loop-approval-framework.md>（支撑 §7）
-   重点读：① interrupt/checkpoint ② decorator/wrapper ③ external approval channel。
-
-7. **IEEE Access 2024《Applications, Challenges, and Future Directions of Human-in-the-Loop Learning》** — <https://ieeexplore.ieee.org/abstract/document/10530996>（支撑全文背景）
-   重点读：① Introduction 的 HITL 定义与分类 ② Challenges 一节。
+完整代码：[`refund_approval.py`](https://github.com/wanghesong2019/langgraph-in-action/blob/main/02-hitl/refund_approval.py)

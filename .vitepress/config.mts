@@ -32,7 +32,8 @@ export default withMermaid(
           text: '系列目录',
           items: [
             { text: '系列导航', link: '/' },
-            { text: '02 · HITL：高危操作人工审批', link: '/02-hitl/' },
+            { text: '第 1 讲 · LangGraph 入门', link: '/01-state-graph/' },
+            { text: '第 2 讲 · HITL 人工审批', link: '/02-hitl/' },
           ],
         },
       ],

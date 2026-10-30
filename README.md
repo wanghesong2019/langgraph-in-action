@@ -19,7 +19,7 @@
 
 | # | 知识点 | demo 场景（中性化） | 状态 |
 |---|---|---|---|
-| 1 | LangGraph 入门：把 Agent 建模成有状态图 | 3 节点流水线 + 条件路由 + checkpointer | 待写 |
+| 1 | LangGraph 入门：把 Agent 建模成有状态图 | 文档处理流水线 + 条件路由 + checkpointer | ✅ 完成（demo + 博客 + 8 篇参考文献） |
 | 2 | HITL：高危操作人工审批 | 客服工单 Agent：退款/删除需 approve | ✅ 完成（demo + 博客 + 7 篇参考文献） |
 | 3 | 多 Agent：Supervisor 分诊 + 专职 Worker | 工单分类 → 三个专职处理 → 聚合 | 待写 |
 | 4 | 两种循环：ReAct 工具循环 vs Executor+Critic | 查资料(工具循环) vs 写方案(生成-评审-重写) | 待写 |
@@ -42,11 +42,11 @@
 ```
 langgraph-in-action/
 ├── README.md              # 本文件：系列导航 + 平台 + 结构
-├── 01-state-graph/        # 每篇一个目录
-│   ├── demo.py            # 可运行 demo
+├── 01-state-graph/        # 第 1 讲
+│   ├── text_summary.py    # 可运行 demo（按业务主题命名，而非 demo.py）
 │   ├── requirements.txt   # 钉死 langgraph 版本
 │   └── README.md          # 这篇的博客全文（md）
-├── 02-hitl/
+├── 02-hitl/               # 第 2 讲（demo: refund_approval.py）
 ├── 03-supervisor-multiagent/
 ├── 04-react-vs-executor-critic/
 ├── 05-function-calling-schema/
@@ -62,7 +62,7 @@ langgraph-in-action/
 ```bash
 cd 02-hitl
 pip install -r requirements.txt   # 钉死 langgraph 版本，保证可复现
-python demo.py
+python refund_approval.py
 ```
 
 ## 维护原则
@@ -74,5 +74,5 @@ python demo.py
 ## 当前进度
 
 - [x] 系列规划 + 平台选择 + 项目结构（本 README）
-- [x] 02-hitl：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）
-- [ ] 01-state-graph：demo 代码 + 参考文献 + 大纲
+- [x] 第 1 讲（01-state-graph）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 8 篇）
+- [x] 第 2 讲（02-hitl）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）

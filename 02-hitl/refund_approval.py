@@ -5,7 +5,7 @@
 
 运行：
   pip install -r requirements.txt
-  python demo.py
+  python refund_approval.py
 
 预期输出：
   ⏸  暂停，待审批： [{'name': '给用户退款 ¥199', 'risk_level': 'high'}]
