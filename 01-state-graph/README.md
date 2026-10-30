@@ -22,17 +22,16 @@
 举个具体例子——官方博客里的「传统 RAG vs Agent RAG」对比：
 
 ```mermaid
-flowchart LR
-    subgraph trad[传统 RAG：一条线走到底]
+graph TD
+    subgraph trad[传统 RAG]
         A[检索] --> B[生成]
     end
-    subgraph agent[Agent RAG：带环的图]
+    subgraph agent[Agent RAG]
         C[检索] --> D{相关性判断}
         D -->|准| E[生成]
         D -->|不准| F[改写 query 重检索]
         F --> C
     end
-    B ~~~ C
 ```
 
 传统 RAG 是「检索 → 生成」一条线：检索结果不准时，它没有回头路，只能硬着头皮用烂结果生成错误答案。Agent RAG 把流程变成一张带环的图：检索后先判断相关性，不准就改写 query 重新检索，直到拿到靠谱结果再生成——「回头重检索」这个环，正是链表达不了的。
@@ -131,7 +130,7 @@ g.add_conditional_edges("analyze", route, {"summarize": "summarize", "report": "
 配上 demo 的整张图：
 
 ```mermaid
-flowchart LR
+graph LR
     ST([START]) --> AN[analyze]
     AN -->|needs_summary = true| SU[summarize]
     AN -->|needs_summary = false| RE[report]
@@ -190,8 +189,8 @@ result = graph.invoke({"text": long_text}, {"configurable": {"thread_id": "doc-l
 配上图（每个超步一个 checkpoint）：
 
 ```mermaid
-flowchart LR
-    S1[超步 1<br/>checkpoint ①] --> S2[超步 2<br/>checkpoint ②] --> S3[超步 3<br/>checkpoint ③]
+graph LR
+    S1[超步1 checkpoint1] --> S2[超步2 checkpoint2] --> S3[超步3 checkpoint3]
     S3 -.->|get_state_history| H[按 thread_id 可回溯每个快照]
 ```
 

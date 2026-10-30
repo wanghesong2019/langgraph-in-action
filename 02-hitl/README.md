@@ -104,10 +104,10 @@ graph.invoke(Command(resume={"0": "approved"}), config)  # 第二次：同 threa
 把 `propose` / `approve` / `report` 三个节点串成一张图：
 
 ```mermaid
-flowchart LR
-    START([start]) --> propose[propose<br/>产出动作清单]
-    propose -->|有高危| approve[approve<br/>interrupt 暂停等审批]
-    propose -->|无高危| report[report<br/>打印审批结果]
+graph LR
+    START([start]) --> propose[propose 产出动作清单]
+    propose -->|有高危| approve[approve interrupt 暂停等审批]
+    propose -->|无高危| report[report 打印审批结果]
     approve --> report
     report --> END([end])
 ```
