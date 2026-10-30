@@ -199,3 +199,7 @@ g.add_edge("billing_worker", "classify")
 5. **腾讯云《第 10 课：Agent Architecture——LangGraph / Multi-Agent》** — <https://cloud.tencent.cn/developer/article/2764676>
 6. **学术：AutoGen《Enabling Next-Gen LLM Applications via Multi-Agent Conversation》** — <https://arxiv.org/abs/2308.08155>
 7. **LangGraph 官方文档《use-subgraphs》** — <https://docs.langchain.com/oss/python/langgraph/use-subgraphs>
+
+---
+
+完整代码：[`ticket_triage.py`](https://github.com/wanghesong2019/langgraph-in-action/blob/main/03-supervisor-multiagent/ticket_triage.py)
