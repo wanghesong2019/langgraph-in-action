@@ -1,6 +1,6 @@
 # 第 2 讲：HITL——让 Agent 学会"先问再做"，给高危操作加一道人工审批闸门
 
-> 本系列用可运行的最小 demo 讲 LangGraph 实战。这是第 2 讲：上一篇（第 1 讲）搭好了 State / Node / Edge / Checkpointer 四件套骨架，这篇往上加第一道「真东西」——让 Agent 在"高危动作"前停下来等人工审批。配套 demo 见同目录 `refund_approval.py`。
+> 本系列用可运行的最小 demo 讲 LangGraph 实战。这是第 2 讲：上一篇（第 1 讲）搭好了 State / Node / Edge / Checkpointer 四件套骨架，这篇往上加第一道「真东西」——让 Agent 在"高危动作"前停下来等人工审批。
 
 **TL;DR**：HITL 的本质 = 在 Agent 执行流程里强留一个人类介入的口子。落地三步：① 给动作打风险标签（`risk_level`）② 高危动作用 `interrupt()` 暂停等人工审批 ③ 配 checkpointer + thread_id 才能 resume。
 

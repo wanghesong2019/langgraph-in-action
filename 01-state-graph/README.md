@@ -1,6 +1,6 @@
 # 第 1 讲：LangGraph 入门——Agent 不是一条链，而是一张有状态图
 
-> 本系列用可运行的最小 demo 讲 LangGraph 实战。这是第 1 讲（入门）：先讲清 LangGraph 的核心四件套——**State / Node / Edge / Checkpointer**，不引入 LLM 和工具。配套 demo 见同目录 `text_summary.py`。
+> 本系列用可运行的最小 demo 讲 LangGraph 实战。这是第 1 讲（入门）：先讲清 LangGraph 的核心四件套——**State / Node / Edge / Checkpointer**，不引入 LLM 和工具。
 
 **TL;DR**：LangGraph 把 Agent 建模成一张「有状态图」——State 是共享记忆，Node 是执行步骤，Edge 决定流向（固定边 + 条件路由），Checkpointer 让状态持久化、可回溯。四件套组合起来，才够支撑真实 Agent 的分支、循环、记忆与暂停恢复。
 
