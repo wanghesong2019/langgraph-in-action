@@ -113,7 +113,7 @@ def build_research_graph():
 关键映射就是 `"search": "search"`——这个自环就是 ReAct 循环的全部。一张图看明白：
 
 ```mermaid
-graph TD
+graph LR
     ST([START]) --> SE[search]
     SE -->|继续搜| SE
     SE -->|信息够了| AN[answer]
@@ -139,7 +139,7 @@ def build_writing_graph():
 关键映射是 `"generate": "generate"`——这个回环就是 Executor+Critic 循环的全部。两个节点来回转，如图：
 
 ```mermaid
-graph TD
+graph LR
     ST([START]) --> GE[generate]
     GE --> CR[critic]
     CR -->|回去改| GE
