@@ -1,0 +1,5 @@
+/* 让 mermaid 图居中显示（VitePress 默认靠左） */
+.vp-doc .mermaid {
+  display: flex;
+  justify-content: center;
+}
