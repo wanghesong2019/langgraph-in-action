@@ -6,7 +6,7 @@
 
 ---
 
-## 大纲（§1–§8）
+## 正文
 
 ### §1 为什么需要多 Agent
 
@@ -172,7 +172,7 @@ g.add_edge("billing_worker", "classify")
 
 再补一个前面没展开的：
 
-1. **loop 必须能终止**。supervisor 靠 `pending` 队列的进出实现循环，一旦某个 worker 忘了「出队」（没执行 `pending[1:]`），队列永远清不空，图就会一直循环到撞上 `recursion_limit`（默认约 1 万步）抛 `GraphRecursionError`。所以写 loop-back 时，先确认「每轮循环都推进了状态、最终能到达终止条件」。
+1. **loop 必须能终止**。supervisor 靠 `pending` 队列的进出实现循环，一旦某个 worker 忘了「出队」（没执行 `pending[1:]`），队列永远清不空，图就会一直循环到撞上 `recursion_limit`（默认 25 步）抛 `GraphRecursionError`。所以写 loop-back 时，先确认「每轮循环都推进了状态、最终能到达终止条件」。
 
 ### §8 生产化延伸 + 总结
 
