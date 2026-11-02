@@ -23,7 +23,7 @@
 | 2 | HITL：高危操作人工审批 | 客服工单 Agent：退款/删除需 approve | ✅ 完成（demo + 博客 + 7 篇参考文献） |
 | 3 | 多 Agent：Supervisor 分诊 + 专职 Worker | 工单分类 → 三个专职处理 → 聚合 | ✅ 完成（demo + 博客 + 6 篇参考文献） |
 | 4 | 两种循环：ReAct 工具循环 vs Executor+Critic | 查资料(工具循环) vs 写方案(生成-评审-重写) | ✅ 完成（demo + 博客 + 7 篇参考文献） |
-| 5 | Function Calling 做强制结构化输出 | 把"交卷"伪装成 tool，用 schema 逼合法 JSON | 待写 |
+| 5 | Function Calling 做强制结构化输出 | 把"交卷"伪装成 tool，用 schema 逼合法 JSON | ✅ 完成（demo + 博客 + 5 篇参考文献） |
 | 6 | RAG 混合检索：dense+BM25→RRF + 中文分词坑 | 文档问答检索（Recall 0.3→1.0 的分词坑） | 待写 |
 | 7 | Agent 评测：ground-truth 注入 + 复检口径 | 注入异常 → 跑 Agent → 复检 → 算 F1 | 待写 |
 | 8 | 数据飞轮：eval → 案例回流 → RAG 增强 | 跑完评测把失败案例回流进检索库 | 待写 |
@@ -78,3 +78,4 @@ python refund_approval.py
 - [x] 第 2 讲（02-hitl）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）
 - [x] 第 3 讲（03-supervisor-multiagent）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 6 篇）
 - [x] 第 4 讲（04-react-vs-executor-critic）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）
+- [x] 第 5 讲（05-function-calling-schema）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 5 篇）

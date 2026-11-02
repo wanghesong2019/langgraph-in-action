@@ -36,6 +36,7 @@ export default withMermaid(
             { text: '第 2 讲 · HITL 人工审批', link: '/02-hitl/' },
             { text: '第 3 讲 · 多 Agent Supervisor', link: '/03-supervisor-multiagent/' },
             { text: '第 4 讲 · 两种循环：ReAct vs Executor+Critic', link: '/04-react-vs-executor-critic/' },
+            { text: '第 5 讲 · Function Calling 结构化输出', link: '/05-function-calling-schema/' },
           ],
         },
       ],
