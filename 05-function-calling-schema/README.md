@@ -1,6 +1,6 @@
 # 第 5 讲：Function Calling 做强制结构化输出——把「交卷」伪装成 tool
 
-> 本系列用可运行的最小 demo 讲 LangGraph 实战。这是第 5 讲：让 LLM 稳定输出 JSON 的可靠做法——不是让它"输出 JSON"，而是把"交卷"伪装成一次 tool call，用 Pydantic schema 当合同逼它返回合法、类型正确的对象。配套 demo 见同目录 `ticket_extract.py`。
+> 本系列用可运行的最小 demo 讲 LangGraph 实战。这是第 5 讲：让 LLM 稳定输出 JSON 的可靠做法——不是让它"输出 JSON"，而是把"交卷"伪装成一次 tool call，用 Pydantic schema 当合同逼它返回合法、类型正确的对象。
 
 **TL;DR**：直接让 LLM"输出 JSON"不可靠（markdown 代码围栏、废话、漏字段、类型漂移）。可靠做法是把"交卷"伪装成 tool call——`model.with_structured_output(Schema)` 一行，Pydantic schema 就是合同，返回类型化对象，零手工解析。
 
