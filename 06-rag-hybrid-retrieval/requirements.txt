@@ -1,0 +1,4 @@
+langgraph==1.2.10
+langchain-openai>=1.0,<2.0
+rank-bm25
+jieba
