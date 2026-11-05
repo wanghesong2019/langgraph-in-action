@@ -1,6 +1,6 @@
 # 第 6 讲：RAG 混合检索——dense + BM25 → RRF + 中文分词坑
 
-> 本系列用可运行的最小 demo 讲 LangGraph 实战。这是第 6 讲：RAG 的检索层——怎么让"召回"又准又全。两条主线：① **中文分词坑**（BM25 若按空格切，中文没空格 → 整句一个 token → 召回崩，换 jieba 恢复）；② **混合检索**（dense 语义 + BM25 关键词，用 RRF 融合）。配套 demo 见同目录 `doc_qa.py`。
+> 本系列用可运行的最小 demo 讲 LangGraph 实战。这是第 6 讲：RAG 的检索层——怎么让"召回"又准又全。两条主线：① **中文分词坑**（BM25 若按空格切，中文没空格 → 整句一个 token → 召回崩，换 jieba 恢复）；② **混合检索**（dense 语义 + BM25 关键词，用 RRF 融合）。
 
 **TL;DR**：检索召回有两类信号——**关键词**（BM25，靠精确匹配）和**语义**（dense embedding，靠向量相似）。单靠任一种都有盲区：BM25 漏同义词、dense 漏精确词。正解是**混合检索**：两者各自召回 top-k，再用 **RRF**（Reciprocal Rank Fusion，`Σ 1/(k+rank)`）融合。另一个坑：中文没空格，BM25 先 jieba 分词才能匹配到词。
 
@@ -199,7 +199,7 @@ ensemble = EnsembleRetriever(
 
 ### §7 组装进 LangGraph：agentic RAG
 
-§6 把检索补成了"能上生产"的形态（索引持久化 + 官方 `EnsembleRetriever`）。但前几节——包括 §6——都还是"查询 → 检索 → 生成"的一条直线，检索是固定、被动的步骤。真实用户的问题未必一次检索就够：有时要查多次、有时要把问题改写成更适合检索的 query、有时检索回来的文档不相关得重查。这就是 **agentic RAG**：把检索变成 agent 里的一个工具，让"要不要查、查什么、查几次"由 agent 自己决定（LangGraph 官方文档《Build a custom RAG agent》，见参考文献 #2）。配套 demo 见 `agentic_rag.py`。
+§6 把检索补成了"能上生产"的形态（索引持久化 + 官方 `EnsembleRetriever`）。但前几节——包括 §6——都还是"查询 → 检索 → 生成"的一条直线，检索是固定、被动的步骤。真实用户的问题未必一次检索就够：有时要查多次、有时要把问题改写成更适合检索的 query、有时检索回来的文档不相关得重查。这就是 **agentic RAG**：把检索变成 agent 里的一个工具，让"要不要查、查什么、查几次"由 agent 自己决定（LangGraph 官方文档《Build a custom RAG agent》，见参考文献 #2）。
 
 **① 检索变工具：`retrieve` 是个 `@tool`。** §5 的混合检索（BM25 + dense → RRF）本来是一个函数，agentic RAG 里把它包成 `@tool`：
 
