@@ -38,6 +38,7 @@ export default withMermaid(
             { text: '第 4 讲 · 两种循环：ReAct vs Executor+Critic', link: '/04-react-vs-executor-critic/' },
             { text: '第 5 讲 · Function Calling 结构化输出', link: '/05-function-calling-schema/' },
             { text: '第 6 讲 · RAG 检索优化', link: '/06-rag-hybrid-retrieval/' },
+            { text: '第 7 讲 · Agent 评测', link: '/07-agent-eval/' },
           ],
         },
       ],

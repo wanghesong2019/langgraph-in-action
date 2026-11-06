@@ -25,7 +25,7 @@
 | 4 | 两种循环：ReAct 工具循环 vs Executor+Critic | 查资料(工具循环) vs 写方案(生成-评审-重写) | ✅ 完成（demo + 博客 + 7 篇参考文献） |
 | 5 | Function Calling 做强制结构化输出 | 把"交卷"伪装成 tool，用 schema 逼合法 JSON | ✅ 完成（demo + 博客 + 5 篇参考文献） |
 | 6 | RAG 检索优化：分词坑 → 混合检索 → 生产化落地 | 文档问答检索（Recall 0.00→1.00 的分词坑） | ✅ 完成（demo + 博客 + 7 篇参考文献） |
-| 7 | Agent 评测：ground-truth 注入 + 复检口径 | 注入异常 → 跑 Agent → 复检 → 算 F1 | 待写 |
+| 7 | Agent 评测：ground-truth 注入 + 复检口径 | 注入异常 → 跑 Agent → 复检 → 算 F1 | ✅ 完成（demo + 博客 + 3 篇参考文献） |
 | 8 | 数据飞轮：eval → 案例回流 → RAG 增强 | 跑完评测把失败案例回流进检索库 | 待写 |
 
 > 候选扩展（先不做，看前 4 篇反馈）：工具安全（SafeSQL 只读护栏）、可观测（Span 树 + token 归因）。
@@ -80,3 +80,4 @@ python refund_approval.py
 - [x] 第 4 讲（04-react-vs-executor-critic）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）
 - [x] 第 5 讲（05-function-calling-schema）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 5 篇）
 - [x] 第 6 讲（06-rag-hybrid-retrieval）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）
+- [x] 第 7 讲（07-agent-eval）：完整完成（demo 可运行 + 博客 §1-§6 + 参考文献 3 篇）
