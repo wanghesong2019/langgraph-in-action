@@ -30,18 +30,22 @@
 
 > 候选扩展（先不做，看前 4 篇反馈）：工具安全（SafeSQL 只读护栏）、可观测（Span 树 + token 归因）。
 
-## 平台选择（每篇博客最多发 2 处）
+## 你可以学到什么
 
-- **主阵地：自有博客**（GitHub Pages + VitePress，后续配域名）—— SEO 主阵地、长期技术资产、个人品牌沉淀。
-- **分发：掘金**（juejin.cn）—— 中文 AI 社区流量 + 百度/谷歌可收录 + 导流回 GitHub。
-- **GitHub 仓库不占"发布地"额度**——它是代码 + md 的家，两个发布平台都从它引流。
-- 公众号**暂不做**：封闭生态，外部搜索引擎搜不到，与"搜索引擎可搜"的目标互斥。
+- **有状态 Agent 建模**：把 LLM 应用建模成 LangGraph 图——节点 / 边 / 条件路由 / checkpointer（第 1 讲）。
+- **HITL 人工审批**：高危操作在流程里挂一个人工 approve 节点，模型只提方案、人来拍板（第 2 讲）。
+- **多 Agent 编排**：Supervisor 分诊 + 专职 Worker 各司其职，分诊-处理-聚合（第 3 讲）。
+- **两种循环范式**：ReAct 工具循环 vs Executor+Critic 生成-评审-重写（第 4 讲）。
+- **强制结构化输出**：用 Function Calling + Pydantic schema 逼 LLM 交合法 JSON（第 5 讲）。
+- **RAG 检索优化**：中文分词坑 → BM25+dense 混合检索 → RRF 融合，召回 0.00→1.00（第 6 讲）。
+- **Agent 评测**：ground-truth 注入 + 复检口径 + macro F1 + LLM-judge（第 7 讲）。
+- **数据飞轮**：把评测失败案例回流进检索库，让系统越用越准（第 8 讲）。
 
 ## 项目结构
 
 ```
 langgraph-in-action/
-├── README.md              # 本文件：系列导航 + 平台 + 结构
+├── README.md              # 本文件：系列导航 + 项目结构
 ├── 01-state-graph/        # 第 1 讲
 │   ├── text_summary.py    # 可运行 demo（按业务主题命名，而非 demo.py）
 │   ├── requirements.txt   # 钉死 langgraph 版本
@@ -65,20 +69,3 @@ pip install -r requirements.txt   # 钉死 langgraph 版本，保证可复现
 python refund_approval.py
 ```
 
-## 维护原则
-
-1. **钉死版本**：每个 demo 的 `requirements.txt` 锁 `langgraph==x.y.z`，README 写清基于哪个版本，避免 API 迭代后跑不起来。
-2. **先跑通 1-2 篇，再铺开**：不一次承诺全部 8 篇；先把第 1、2 篇的"demo + 博客 + 双平台发布"完整流水线跑通。
-3. **诚实边界**：每个 demo 都标注"生产该怎么做"，不吹满。
-
-## 当前进度
-
-- [x] 系列规划 + 平台选择 + 项目结构（本 README）
-- [x] 第 1 讲（01-state-graph）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 8 篇）
-- [x] 第 2 讲（02-hitl）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）
-- [x] 第 3 讲（03-supervisor-multiagent）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 6 篇）
-- [x] 第 4 讲（04-react-vs-executor-critic）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）
-- [x] 第 5 讲（05-function-calling-schema）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 5 篇）
-- [x] 第 6 讲（06-rag-hybrid-retrieval）：完整完成（demo 可运行 + 博客 §1-§8 + 参考文献 7 篇）
-- [x] 第 7 讲（07-agent-eval）：完整完成（demo 可运行 + 博客 §1-§6 + 参考文献 3 篇）
-- [x] 第 8 讲（08-data-flywheel）：完整完成（demo 可运行 + 博客 §1-§6 + 参考文献 5 篇）
